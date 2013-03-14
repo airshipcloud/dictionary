@@ -28,9 +28,9 @@ init([]) ->
         ],
         [
             {hostname, "127.0.0.1"},
-            {database, "tag_analysis"},
-            {username, "tag_analysis"},
-            {password, "y7DrtF48bc"}
+            {database, "airship_dict"},
+            {username, "airship_dict"},
+            {password, "TEMP_PASS_1234"}
         ]),
     {ok, { {one_for_one, 5, 10}, [Pool, rest()]} }.
 
