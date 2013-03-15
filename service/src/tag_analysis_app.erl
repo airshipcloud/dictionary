@@ -10,7 +10,9 @@
 %% ===================================================================
 
 start(_StartType, _StartArgs) ->
-    tag_analysis_sup:start_link().
+    Sup = tag_analysis_sup:start_link(),
+    error_logger:info_msg("~n==============================~nService running on http://~s:~p~n==============================~n", ["localhost", 10001]),
+    Sup.
 
 stop(_State) ->
     ok.
