@@ -11,7 +11,7 @@ start_link() ->
 
 rest() ->
     RestDispatch = [{'_', [
-        {[<<"tag">>, tag], tag_analysis, []}
+        {[<<"tags">>, tag], tag_analysis, []}
     ]}],
     RestConfig = [rest_listener, 100,
         [{port, 10001}],
