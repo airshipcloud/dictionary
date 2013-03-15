@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# -*- tab-width:4;indent-tabs-mode:nil -*-
+# ex: ts=4 sw=4 et
+
+# while getopts "d" option; do
+#   case "${option}" in
+#     d) DETACH=1;;
+#   esac
+# done
+
+case "$1" in
+
+    start)
+        ./service/rel/tag_analysis/bin/tag_analysis start
+        ;;
+
+    stop)
+        ./service/rel/tag_analysis/bin/tag_analysis stop
+        ;;
+
+    restart)
+        ./service/rel/tag_analysis/bin/tag_analysis restart
+        ;;
+
+    console)
+        ./service/rel/tag_analysis/bin/tag_analysis console
+        ;;
+esac
