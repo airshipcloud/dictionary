@@ -10,12 +10,12 @@ start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 rest() ->
-    RestDispatch = [{'_', [
-        {[<<"tags">>, tag], tag_analysis, []}
-    ]}],
+    RestDispatch = cowboy_router:compile([{'_', [
+        {"/tags/[:tag]", tag_analysis, []}
+    ]}]),
     RestConfig = [rest_listener, 100,
         [{port, 10001}],
-        [{dispatch, RestDispatch}]],
+        [{env, [{dispatch, RestDispatch}]}]],
     {rest, {cowboy, start_http, RestConfig}, permanent, 5000, supervisor, dynamic}.
 
 init([]) ->

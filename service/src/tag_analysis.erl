@@ -51,7 +51,11 @@ related(Tag) ->
     [Generic || {Generic} <- R].
 
 read_json(Req, #state{tag = Tag} = State) ->
-    {jiffy:encode({[{<<"synonyms">>, synonyms(Tag)}, {<<"generics">>, generics(Tag)}, {<<"related">>, related(Tag)}]}), Req, State}.
+    {jiffy:encode({[
+        {<<"synonyms">>, synonyms(Tag)}
+        %%{<<"generics">>, generics(Tag)},
+        %%{<<"related">>, related(Tag)}
+    ]}), Req, State}.
 
 add_cors(Req) ->
     cowboy_req:set_resp_header(<<"access-control-allow-origin">>, <<"http://tags.connect.me">>,
