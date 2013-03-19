@@ -21,6 +21,13 @@ make setup
 script/dictionary console
 ```
 
+## Seed Wordnet
+
+```bash
+# from Erlang console
+(tag_analysis@127.0.0.1)1> tag_analysis_import_wordnet:do("../dictionary-seed/wordnet/Thesaurus/Thesaurus_a-z.csv").
+```
+
 ## Querying
 
 ```bash
