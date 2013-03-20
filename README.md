@@ -35,8 +35,8 @@ git clone https://github.com/airships/dictionary-seed.git
 ## Seed Tags
 
 ```bash
-cat ../dictionary-seed/db/tags.tsv | psql -U airship_dict 
-cat ../dictionary-seed/db/synonyms.tsv | psql -U airship_dict 
+(echo 'copy tags from stdin;' ; cat ../dictionary-seed/db/tags.tsv) | psql -U airship_dict 
+(echo 'copy synonyms from stdin;' ; cat ../dictionary-seed/db/synonyms.tsv) | psql -U airship_dict 
 ```
 
 ## Querying
