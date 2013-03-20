@@ -28,6 +28,13 @@ script/dictionary console
 (tag_analysis@127.0.0.1)1> tag_analysis_import_wordnet:do("../dictionary-seed/wordnet/Thesaurus/Thesaurus_a-z.csv").
 ```
 
+## Seed Tags
+
+```bash
+cat ../dictionary-seed/db/tags.tsv | psql -U airship_dict 
+cat ../dictionary-seed/db/synonyms.tsv | psql -U airship_dict 
+```
+
 ## Querying
 
 ```bash
