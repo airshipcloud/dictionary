@@ -23,8 +23,12 @@ script/dictionary console
 
 ## Seed Wordnet
 
+WordNet data is stored in a separate [dictionary-seed](https://github.com/airships/dictionary-seed) repo.
+
 ```bash
-# from Erlang console
+git clone https://github.com/airships/dictionary-seed.git
+
+# In dictionary Erlang console
 (tag_analysis@127.0.0.1)1> tag_analysis_import_wordnet:do("../dictionary-seed/wordnet/Thesaurus/Thesaurus_a-z.csv").
 ```
 
