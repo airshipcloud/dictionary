@@ -1,8 +1,7 @@
 WordNet Dictionary
 ==================
 
-The dictionary service provides a JSON API for looking up words in WordNet
-and matching the against a particular corpus.
+The dictionary service provides a JSON API for expanding a tag into set of synonym tag, more general tag and related tags by using English stemming and WordNet. The service can be used in tagging systems to further expand and/or rank search results.
 
 ## Requirements
 
@@ -29,7 +28,7 @@ WordNet data is stored in a separate [dictionary-seed](https://github.com/airshi
 git clone https://github.com/airships/dictionary-seed.git
 
 # In dictionary Erlang console
-(tag_analysis@127.0.0.1)1> tag_analysis_import_wordnet:do("../dictionary-seed/wordnet/Thesaurus/Thesaurus_a-z.csv").
+(tag_analysis@127.0.0.1)1> tag_analysis_import_wordnet:do("../../../../dictionary-seed/wordnet/Thesaurus/Thesaurus_a-z.csv").
 ```
 
 ## Seed Tags
